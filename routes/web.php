@@ -15,7 +15,7 @@ use App\Http\Controllers\IndexController;
 */
 
 Route::get('/',[IndexController::class,'index'])->name('/');
-
+Route::get('/adminhome',[IndexController::class,'adminhome'])->name('/adminhome');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

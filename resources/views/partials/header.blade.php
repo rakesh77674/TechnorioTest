@@ -236,6 +236,21 @@
 				                    <li class="scroll"><a href="#feature">features</a></li>
 				                    <li class="scroll"><a href="#blog">blog</a></li>
 				                    <li class="scroll"><a href="#newsletter">contact</a></li>
+									<li>
+									@if (Route::has('login'))
+                                   <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                                    @auth
+                                  <li><a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a></li>
+                                   @else
+                                  <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
+
+                                 @if (Route::has('register'))
+                                 <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a></li>
+                                @endif
+                               @endauth
+								   </li>
+                </div>
+            @endif
 				                </ul><!--/.nav -->
 				            </div><!-- /.navbar-collapse -->
 				        </div><!--/.container-->
