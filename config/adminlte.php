@@ -250,7 +250,12 @@ return [
             'text'        => 'Movies',
             'url'         => 'admin/movie',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Favorite User',
+            'url'         => 'admin/User',
+            'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
        

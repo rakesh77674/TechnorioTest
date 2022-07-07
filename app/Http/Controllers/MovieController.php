@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
@@ -14,7 +15,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        $Movie = Movie::all();
+       return view('admin.movie.index',compact('Movie'));
     }
 
     /**
@@ -24,7 +26,8 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        
+       return view('admin.movie.create',);
     }
 
     /**
@@ -35,7 +38,18 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $movie = new Movie;
+        $movie->title = $request->title;
+        $movie->releasedate = $request->releasedate;
+        $poster = $request->poster;
+        $imageName = time().'.'.$poster->getClientOriginalExtension();
+        $request->poster->move('poster', $imageName);
+        $movie->poster = "/poster/".$imageName;
+        $movie->description = $request->description;
+        $movie->updated_by = Auth::user()->id;
+        $movie->created_by = Auth::user()->id; 
+        $movie->save();
+        return redirect('/admin/movie');
     }
 
     /**
@@ -55,9 +69,10 @@ class MovieController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movie $movie)
+    public function edit($id)
     {
-        //
+        $Movie = Movie::find($id);
+        return view("admin.movie.edit",compact('Movie'));
     }
 
     /**
@@ -67,9 +82,20 @@ class MovieController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(Request $request, $id)
     {
-        //
+        $movie = Movie::find($id);
+        $movie->title = $request->title;
+        $movie->releasedate = $request->releasedate;
+        $poster = $request->poster;
+        $imageName = time().'.'.$poster->getClientOriginalExtension();
+        $request->poster->move('poster', $imageName);
+        $movie->poster = "/poster/".$imageName;
+        $movie->description = $request->description;
+        $movie->updated_by = Auth::user()->id;
+        $movie->created_by = Auth::user()->id; 
+        $movie->save();
+        return redirect('/admin/movie');
     }
 
     /**
@@ -78,8 +104,9 @@ class MovieController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $movie)
+    public function destroy($id)
     {
-        //
+        Movie::find($id)->delete();
+        return Redirect("/admin/movie");
     }
 }
