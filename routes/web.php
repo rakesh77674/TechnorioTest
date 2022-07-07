@@ -15,3 +15,13 @@ use App\Http\Controllers\IndexController;
 */
 
 Route::get('/',[IndexController::class,'index'])->name('/');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

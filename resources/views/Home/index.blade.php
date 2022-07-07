@@ -574,7 +574,7 @@
 						<a href="#"><i class="fa fa-behance"></i></a>	
 					</div>
 					<p>
-						&copy;copyright. designed and developed by <a href="https://www.themesine.com/">themesine</a>
+						&copy;copyright. designed and developed by Rakesh Chaudhary<a href="">themesine</a>
 					</p><!--/p-->
 				</div><!--/.text-center-->
 			</div><!--/.container-->
