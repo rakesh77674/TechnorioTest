@@ -15,7 +15,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $Movie = Movie::all();
+        $Movie = Movie::all()->where('published','1');
        return view('admin.movie.index',compact('Movie'));
     }
 

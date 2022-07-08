@@ -5,6 +5,8 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\FilterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,6 @@ Route::get('/admin/User',[Admincontroller::class, "index"])->name('/admin/User')
 });
 Route::get('/wish-list/{id}',[WishlistController::class,'WishListShow'])->name('wishListShow');
 Route::get('/wish-list-count/{id}',[WishlistController::class,'WishListShowCount'])->name('wishListShowCount');
+
+
+

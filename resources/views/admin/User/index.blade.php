@@ -1,6 +1,7 @@
 @extends('dashboard')
 @section('content')
-    <table class="table table-bordered">
+
+    <table class="table table-bordered"id ="records">
         <thead>
         <tr class = "table-primary">
             <th scope="col">Movie Name</th>
@@ -24,6 +25,5 @@
             @endforeach
         
         </tbody>
-    </table>
-  @endsection
-
+ @endsection
+ 
