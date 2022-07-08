@@ -16,7 +16,7 @@ class IndexController extends Controller
     public function adminhome(){
         $usertype = Auth::user()->usertype;
         if($usertype=='1'){
-            return view('dashboard');
+            return view('admin.dashboard');
         }
         else{
             return redirect('/');

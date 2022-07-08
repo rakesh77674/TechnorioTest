@@ -22,7 +22,8 @@ use App\Http\Controllers\FilterController;
 Route::get('/',[IndexController::class,'index'])->name('/');
 Route::get('/adminhome',[IndexController::class,'adminhome'])->name('/adminhome');
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
+Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 Route::get('/admin/movie',[MovieController::class,'index'])->name('/admin/movie');
 Route::get('/admin/addMovie',[MovieController::class,'create'])->name('/admin/addMovie');
 Route::post('/admin/storeMovie',[MovieController::class,'store'])->name('/admin/storeMovie');
