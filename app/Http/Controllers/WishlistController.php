@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Movie;
 use App\Models\Wishlist;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -31,7 +31,12 @@ class WishlistController extends Controller
      
     }
     public function WishListShowCount($id){
+      
         $wishListcount = WishList::count($id);
         return view('wishlist.index',compact('wishListcount'));
+    }
+    public function wishlist(){
+        $wishlist = Wishlist::where('users_id',Auth::id())->first();
+        return view('wishlist.index',compact('wishlist'));
     }
 }

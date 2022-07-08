@@ -6,14 +6,7 @@
 
 @section('content')
 @include('partials.header')
-	<div id="preloader">
-			<div class="jumper">
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
-		</div>  
-		<section id="populer-products" class="populer-products">
+<section id="populer-products" class="populer-products">
 			<div class="container">
 				<div class="populer-products-content">
 					<div class="row">

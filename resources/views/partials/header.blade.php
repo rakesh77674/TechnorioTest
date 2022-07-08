@@ -135,7 +135,7 @@
 									@php 
                                    $wishListcount = (App\Models\WishList::count());
 									@endphp
-				                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+				                        <a href="{{route('movie.wishlist')}}" class="dropdown-toggle" data-toggle="dropdown" >
 				                            <span class="lnr lnr-heart"></span>
 											<span class="badge badge-bg-1">{{$wishListcount}}</span>
 				                        </a>

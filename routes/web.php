@@ -33,6 +33,7 @@ Route::get('/admin/User',[Admincontroller::class, "index"])->name('/admin/User')
 });
 Route::get('/wish-list/{id}',[WishlistController::class,'WishListShow'])->name('wishListShow');
 Route::get('/wish-list-count/{id}',[WishlistController::class,'WishListShowCount'])->name('wishListShowCount');
+Route::get('/wishlist-component',[WishlistController::class,'wishlist'])->name('movie.wishlist');
 
 
 
