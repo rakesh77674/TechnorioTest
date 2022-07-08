@@ -7,16 +7,19 @@
         <th scope="col">poster</th>
         <th scope="col">description</th>
         <th scope="col">releasedate</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
     @foreach($wishlist as $wish)
       <tr>
-        <th></th>
-        <td><img height = "50" width = "50" margin = "12"src = "{{$wish->poster}}"></td>
-        <td>{{$wish->description}}</td>
-        <td>{{$wish->releasedate}}</td>
-      </tr>
+        <th>{{$wish->movie->title}}</th>
+        <td><img height = "50" width = "50" margin = "12"src = "{{$wish->movie->poster}}"></td>
+        <td>{{$wish->movie->description}}</td>
+        <td>{{$wish->movie->releasedate}}</td>
+        <td>
+          <button type="submit" class="btn btn-warning" style ="background: red;max-width: 100px;padding: 2px;margin: 2px;width: 100%; color:white; ">Delete</button>
+        </td>
       </tr>
       @endforeach
     </tbody>

@@ -36,7 +36,8 @@ class WishlistController extends Controller
         return view('wishlist.index',compact('wishListcount'));
     }
     public function wishlist(){
-        $wishlist = Wishlist::where('users_id',Auth::id())->first();
+        $users = Auth::user();
+      $wishlist = Wishlist::where("users_id", "=", $users->id)->get();
         return view('wishlist.index',compact('wishlist'));
     }
 }
