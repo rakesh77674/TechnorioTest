@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
             'usertype'=>'1',
             'password'=>bcrypt('admin'),
           ]);
+          $this->call(MovieSeeder::class);
     }
 }
