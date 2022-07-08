@@ -28,6 +28,9 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public function wishlist(){
+        return $this->hasMany(WishList::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

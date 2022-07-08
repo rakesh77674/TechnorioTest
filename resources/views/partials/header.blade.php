@@ -98,48 +98,7 @@
 
 					</div><!-- /.item .active-->
 
-					<div class="item">
-						<div class="single-slide-item slide3">
-							<div class="container">
-								<div class="welcome-hero-content">
-									<div class="row">
-										<div class="col-sm-7">
-											<div class="single-welcome-hero">
-												<div class="welcome-hero-txt">
-													<h4>great design collection</h4>
-													<h2>valvet accent arm chair</h2>
-													<p>
-														Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiuiana smod tempor  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. 
-													</p>
-													<div class="packages-price">
-														<p>
-															$ 299.00
-															<del>$ 399.00</del>
-														</p>
-													</div>
-													<button class="btn-cart welcome-add-cart" onclick="window.location.href='#'">
-														<span class="lnr lnr-plus-circle"></span>
-														add <span>to</span> cart
-													</button>
-													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='#'">
-														more info
-													</button>
-												</div><!--/.welcome-hero-txt-->
-											</div><!--/.single-welcome-hero-->
-										</div><!--/.col-->
-										<div class="col-sm-5">
-											<div class="single-welcome-hero">
-												<div class="welcome-hero-img">
-													<img src="assets/images/slider/slider3.png" alt="slider image">
-												</div><!--/.welcome-hero-txt-->
-											</div><!--/.single-welcome-hero-->
-										</div><!--/.col-->
-									</div><!--/.row-->
-								</div><!--/.welcome-hero-content-->
-							</div><!-- /.container-->
-						</div><!-- /.single-slide-item-->
-						
-					</div><!-- /.item .active-->
+	
 				</div><!-- /.carousel-inner-->
 
 			</div><!--/#header-carousel-->
@@ -173,48 +132,14 @@
 				                		<a href="#"><span class="lnr lnr-cog"></span></a>
 				                	</li><!--/.search-->
 				                    <li class="dropdown">
+									@php 
+                                   $wishListcount = (App\Models\WishList::count());
+									@endphp
 				                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
-				                            <span class="lnr lnr-cart"></span>
-											<span class="badge badge-bg-1">2</span>
+				                            <span class="lnr lnr-heart"></span>
+											<span class="badge badge-bg-1">{{$wishListcount}}</span>
 				                        </a>
-				                        <ul class="dropdown-menu cart-list s-cate">
-				                            <li class="single-cart-list">
-				                                <a href="#" class="photo"><img src="assets/images/collection/arrivals1.png" class="cart-thumb" alt="image" /></a>
-				                                <div class="cart-list-txt">
-				                                	<h6><a href="#">arm <br> chair</a></h6>
-				                                	<p>1 x - <span class="price">$180.00</span></p>
-				                                </div><!--/.cart-list-txt-->
-				                                <div class="cart-close">
-				                                	<span class="lnr lnr-cross"></span>
-				                                </div><!--/.cart-close-->
-				                            </li><!--/.single-cart-list -->
-				                            <li class="single-cart-list">
-				                                <a href="#" class="photo"><img src="assets/images/collection/arrivals2.png" class="cart-thumb" alt="image" /></a>
-				                                <div class="cart-list-txt">
-				                                	<h6><a href="#">single <br> armchair</a></h6>
-				                                	<p>1 x - <span class="price">$180.00</span></p>
-				                                </div><!--/.cart-list-txt-->
-				                                <div class="cart-close">
-				                                	<span class="lnr lnr-cross"></span>
-				                                </div><!--/.cart-close-->
-				                            </li><!--/.single-cart-list -->
-				                            <li class="single-cart-list">
-				                                <a href="#" class="photo"><img src="assets/images/collection/arrivals3.png" class="cart-thumb" alt="image" /></a>
-				                                <div class="cart-list-txt">
-				                                	<h6><a href="#">wooden arn <br> chair</a></h6>
-				                                	<p>1 x - <span class="price">$180.00</span></p>
-				                                </div><!--/.cart-list-txt-->
-				                                <div class="cart-close">
-				                                	<span class="lnr lnr-cross"></span>
-				                                </div><!--/.cart-close-->
-				                            </li><!--/.single-cart-list -->
-				                            <li class="total">
-				                                <span>Total: $0.00</span>
-				                                <button class="btn-cart pull-right" onclick="window.location.href='#'">view cart</button>
-				                            </li>
-				                        </ul>
-				                    </li><!--/.dropdown-->
-				                </ul>
+				                        
 				            </div><!--/.attr-nav-->
 				            <!-- End Atribute Navigation -->
 
@@ -249,8 +174,8 @@
                                 @endif
                                @endauth
 								   </li>
-                </div>
-            @endif
+								    </div>
+                                 @endif
 				                </ul><!--/.nav -->
 				            </div><!-- /.navbar-collapse -->
 				        </div><!--/.container-->

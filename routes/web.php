@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +27,7 @@ Route::post('/admin/storeMovie',[MovieController::class,'store'])->name('/admin/
 Route::post('/admin/edit/{id}',[MovieController::class,'edit'])->name('edit.index');
 Route::delete('/admin/delete/{id}',[MovieController::class,'destroy'])->name('destroy.index');
 Route::put('/admin/update/{id}',[MovieController::class,'update'])->name('update.movie');
+Route::get('/admin/User',[Admincontroller::class, "index"])->name('/admin/User');
 });
+Route::get('/wish-list/{id}',[WishlistController::class,'WishListShow'])->name('wishListShow');
+Route::get('/wish-list-count/{id}',[WishlistController::class,'WishListShowCount'])->name('wishListShowCount');
