@@ -40,4 +40,5 @@ class WishlistController extends Controller
       $wishlist = Wishlist::where("users_id", "=", $users->id)->get();
         return view('wishlist.index',compact('wishlist'));
     }
+    
 }

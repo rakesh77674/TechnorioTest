@@ -28,4 +28,5 @@ class AdminController extends Controller
        $user = $user->select('movies.*', 'users.name as userName')->get();
        return view('admin.User.index', compact('user'));
     }
+   
 }
