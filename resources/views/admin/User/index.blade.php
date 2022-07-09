@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('admin.dashboard')
 @section('content')
 
     <table class="table table-bordered"id ="records">

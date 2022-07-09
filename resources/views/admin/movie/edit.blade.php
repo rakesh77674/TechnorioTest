@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('admin.dashboard')
 @section('content')
 <form method = "post" action = "{{route('update.movie',$Movie->id)}}" enctype="multipart/form-data">
     @csrf

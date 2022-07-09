@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('admin.dashboard')
 @section('content')
        <a href="/admin/addMovie">
             <span class="btn btn-success col fileinput-button" style = "width: 178px;">

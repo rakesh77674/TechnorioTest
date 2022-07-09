@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('admin.dashboard')
 @section('content')
 <form method = "post" action = "{{url('/admin/storeMovie')}}" enctype="multipart/form-data">
     @csrf
