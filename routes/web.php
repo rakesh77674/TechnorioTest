@@ -38,6 +38,12 @@ Route::delete('/admin/delete/{id}',[MovieController::class,'destroy'])->name('de
 Route::put('/admin/update/{id}',[MovieController::class,'update'])->name('update.movie');
 Route::get('/admin/User',[Admincontroller::class, "index"])->name('/admin/User');
 
+Route::get('/logout',function(){
+    auth()->logout();
+    Session()->flush();
+    return redirect('/');
+})->name('admin.logout');
+
 
 
 
